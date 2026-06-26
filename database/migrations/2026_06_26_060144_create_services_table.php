@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_layanan');
+            $table->foreignId('kategori_id')->constrained('categories')->onDelete('cascade');
+            $table->decimal('harga', 10, 2);
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }
