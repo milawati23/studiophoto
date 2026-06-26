@@ -15,8 +15,17 @@
                     <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </flux:sidebar.item>
-                 <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+
+                    <flux:sidebar.item icon="tag" :href="route('category')" :current="request()->routeIs('category')" wire:navigate>
                         {{ __('Category') }}
+                    </flux:sidebar.item>
+
+                    <flux:sidebar.item icon="briefcase" :href="route('layanan')" :current="request()->routeIs('layanan')" wire:navigate>
+                        {{ __('Layanan') }}
+                    </flux:sidebar.item>
+
+                    <flux:sidebar.item icon="users" :href="route('customer')" :current="request()->routeIs('customer')" wire:navigate>
+                        {{ __('Pelanggan') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>

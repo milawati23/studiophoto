@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_layanan');
-            $table->foreignId('kategori_id')->constrained('categories')->onDelete('cascade');
-            $table->decimal('harga', 10, 2);
-            $table->text('deskripsi');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade'); // Menghubungkan ke tabel categories
+            $table->string('name');
+            $table->integer('price');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
